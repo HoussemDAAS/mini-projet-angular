@@ -1,0 +1,27 @@
+<div class="container">
+    <div>
+      <h2>Ajouter un plat :</h2>
+    </div>
+    <form>
+      <div class="col-sm-2 col-md-2 col-lg-2">
+        <label>ID plat</label>
+        <input type="text" [(ngModel)]="newPlat.idplat" name="idplat" class="form-control">
+      </div>
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <label>Nom plat</label>
+        <input type="text" [(ngModel)]="newPlat.nomplat" name="nomplat" class="form-control">
+      </div>
+      <div class="col-sm-2 col-md-2 col-lg-2">
+        <label>Prix plat</label>
+        <input type="number" [(ngModel)]="newPlat.prixplat" name="prixplat" class="form-control">
+      </div>
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <label>Date création</label>
+        <input type="date" [(ngModel)]="newPlat.dateCreation" name="dateCreation" class="form-control">
+      </div>
+      <div class="mt-2">
+        <button type="button" (click)="addPlat()" class="btn btn-success">Ajouter</button>
+      </div>
+    </form>
+  </div>
+  
