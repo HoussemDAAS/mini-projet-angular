@@ -1,0 +1,35 @@
+<div class="container">
+    <div>
+    <h2>Modifier un plat :</h2>
+    </div>
+    <form >
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label >ID Plat</label>
+            <input  readonly type="text" [(ngModel)]="currentPlat.idPlat"
+            name="idPlat" class="form-control">
+            </div>
+    <div class="col-sm-4 col-md-4 col-lg-4" >
+    <label >Nom plat</label>
+    <input type="text"[(ngModel)]= "currentPlat.nomPlat"
+    name="nomPlat" class="form-control">
+    </div>
+    <div class="col-sm-2 col-md-2 col-lg-2">
+    <label >Prix plat</label>
+    <input type="number" [(ngModel)]= "currentPlat.prix"
+    name="prix" class="form-control">
+    </div>
+    
+<div class="col-sm-4 col-md-4 col-lg-4">
+    <label >Menu</label>
+    <select class="form-control form-control-lg" id="idMenu" name="idMenu"
+    [(ngModel)]="updateidmenu">
+    <option *ngFor="let Menu of menus" [value]="Menu.idMenu" >
+    {{Menu.nomMenu}}
+    </option>
+    </select>
+    </div>
+<div class="mt-2">
+<button type="submit" (click)="updatePlat();  navigateToPlats()" class="btn btn-success">Modifer</button>
+</div>
+</form>
+</div>

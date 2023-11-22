@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="card shadow mb-4">
+    <div class="card-body">
+        <div class="col-sm-4 col-md-4 col-lg-4 mb-4">
+            <label>Menus </label>
+            <select class="form-control form-control-lg" id="idMenu" name="idMenu"
+            [(ngModel)]="idMenu" (change)="onChange()">
+            <option *ngFor="let men of menus" value="{{men.idMenu}}">
+            {{men.nomMenu}}
+             </option>
+            </select>
+            </div>
+    <table >
+    <thead>
+        <tr> <th>Id</th><th>Nom</th> <th>Prix</th>    <th>Menu</th> </tr>
+    </thead>
+    <tbody *ngFor="let plat of plats">
+    <tr>
+        <td>      {{plat.idPlat}}</td>
+            <td>  {{plat.nomPlat}}</td>
+            <td>  {{plat.prix}}  </td>
+          
+            <td> {{ plat.menu?.nomMenu }}</td> 
+            <td><a class="btn btn-danger" (click)="supprimerPlat(plat)">Supprimer</a></td>
+            <td><a class="btn btn-success" [routerLink]="['/updatePlat',plat.idPlat]">Modifier</a></td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </div>
